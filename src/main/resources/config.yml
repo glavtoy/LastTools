@@ -1,0 +1,374 @@
+blocked-commands: # Заблокированные команды для всех рангов, кроме admin
+  - '?'
+  - 'give'
+  - 'kill'
+  - 'about'
+  - 'bukkit'
+  - 'help'
+  - 'icanhasbukkit'
+  - 'me'
+  - 'minecraft'
+  - 'pl'
+  - 'plugins'
+  - 'trigger'
+  - 'tab'
+  - 'paper'
+  - 'mspt'
+  - 'tab'
+  - 'papi'
+  - 'placeholderapi'
+  - 'teammsg'
+  - 'tell'
+  - 'tm'
+  - 'say'
+  - 'ver'
+  - 'version'
+  - 'w'
+  - 'ban'
+  - 'particle'
+  - 'ban-ip'
+  - 'banlist'
+  - 'pardon'
+  - 'pardon-ip'
+  - 'kick'
+  - 'op'
+  - 'deop'
+  - 'whitelist'
+  - 'difficulty'
+  - 'defaultgamemode'
+  - 'gamemode'
+  - 'time'
+  - 'weather'
+  - 'toggledownfall'
+  - 'seed'
+  - 'list'
+  - 'playsound'
+  - 'playerinfo'
+  - 'spawnpoint'
+  - 'setblock'
+  - 'setidletimeout'
+  - 'setworldspawn'
+  - 'stop'
+  - 'scoreboard'
+  - 'save-all'
+  - 'schedule'
+  - 'save-off'
+  - 'save-on'
+  - 'debug'
+  - 'rl'
+  - 'reload'
+  - 'weather'
+  - 'time'
+  - 'advancement'
+  - 'attribute'
+  - 'bossbar'
+  - 'data'
+  - 'datapack'
+  - 'clone'
+  - 'effect'
+  - 'enchant'
+  - 'execute'
+  - 'experience'
+  - 'fill'
+  - 'forcereload'
+  - 'gamerule'
+  - 'function'
+  - 'locate'
+  - 'loot'
+  - 'locatebiome'
+  - 'recipe'
+  - 'replaceitem'
+  - 'restart'
+
+spawn-location: {}
+
+announcements:
+  interval: 10
+  messages:
+    '1':
+      - "&6Тестовое сообщение номер 1 на сервере LastLord!"
+      - "&eЕго можно отредактировать в файле config.yml"
+
+ranks: # Список рангов
+  player: # Тэг ранга
+    default: true # Установка ранга по умолчанию
+    index: 0 # Индекс ранга
+    prefix: "&7Игрок" # Префикс ранга
+    includes: {} # Унаследованные ранги
+    permissions: # Список прав ранга
+      - 'lasttools.spawn'
+  admin:
+    default: false
+    index: 1
+    prefix: "&cАдмин"
+    includes: {}
+    permissions:
+      - '*'
+
+placeholders: # Плейсхолдеры для раздела locale
+  gamemode: # Имя плейсхолдера
+    survival: "&6выживание" # Значение плейсхолдера
+    creative: "&6креатив"
+    adventure: "&6приключение"
+    spectator: "&6наблюдатель"
+  time:
+    day: "&6день"
+    night: "&6ночь"
+  weather:
+    sun: "&6ясность"
+    storm: "&6шторм"
+
+locale: # Настройка текстовых сообщений
+  chat-format:
+    local: "&bL &7| {rank} {player}&f: {message}"
+    global: "&6G &7| {rank} {player}&f: {message}"
+    personal:
+      from: "&8ЛС &r&7| &6Я -> {player} &7: {message}"
+      to: "&8ЛС &r&7| &6{player} -> Я &7: {message}"
+  not-found-command: "{prefix} &cКоманда не найдена или не доступна!"
+  prefix: "&6&lLastLord &r&7|"
+  no-perms: "{prefix} &cДля использования данной команды нужно иметь ранг {rank} и выше!"
+  not-number: "{prefix} &cНаписанное вами значение не является числом!"
+  offline-player: "{prefix} &cИгрок {player} не в сети!"
+  available-ranks: "{prefix} &cДоступные ранги: {ranks}"
+  coins:
+    usage: "{prefix} &cИспользуйте: /coins <send|add|remove|set> <игрок> <количество>"
+    limit: "{prefix} &cВы можете отправить только от {min} до {max} монет!"
+    send: "{prefix} &fВы отправили &a{amount} &fмонет игроку &e{player}"
+    receive: "{prefix} &fВы получили &a{amount} &fмонет от игрока &e{player}"
+    yourself: "{prefix} &cВы не можете отправлять монеты самому себе!"
+    edit: "{prefix} &fБаланс монет игрока &6{player} &fбыл изменен на &a{amount}"
+    send-limit:
+      min: 1
+      max: 1000000000
+  tokens:
+    usage: "{prefix} &cИспользуйте: /tokens <send|add|remove|set> <игрок> <количество>"
+    limit: "{prefix} &cВы можете отправить только от {min} до {max} жетонов!"
+    send: "{prefix} &fВы отправили &6{amount} &fжетонов игроку &e{player}"
+    receive: "{prefix} &fВы получили &6{amount} &fжетонов от игрока &e{player}"
+    yourself: "{prefix} &cВы не можете отправлять жетоны самому себе!"
+    edit: "{prefix} &fБаланс жетонов игрока &e{player} &fбыл изменен на &6{amount}"
+    send-limit:
+      min: 1
+      max: 1000000000
+  gamemode:
+    usage:
+      player: "{prefix} &cИспользуйте: /gamemode <0|1|2|3>"
+      other: "{prefix} &cИспользуйте: /gamemode <0|1|2|3> <игрок>"
+      multiply-use:
+        - "&cВарианты использования:"
+        - " &c/gamemode <0|1|2|3>"
+        - " &c/gamemode <0|1|2|3> <игрок>"
+    player: "{prefix} &fРежим игры &6изменен &fна {gamemode}"
+    other: "{prefix} &fРежим игры &6изменен &fна {gamemode} &fдля игрока &6{player}"
+  rank:
+    usage: "{prefix} &cИспользуйте: /rank <set|add> <игрок> <ранг>"
+    set: "{prefix} &fРанг {rank} &fустановлен игроку &6{player}"
+    add: "{prefix} &fРанг игрока &6{player} &fбыл изменен на {rank}"
+  day: "{prefix} &fВремя в мире установлено на {time}"
+  night: "{prefix} &fВремя в мире установлено на {time}"
+  wash:
+    process: "{prefix} &7Очистка дропа на всех картах.."
+    done: "{prefix} &aДроп успешно очищен!"
+  balance:
+    - "&fВаши балансы:"
+    - " &fМонет: &a{coins}"
+    - " &fЖетонов: &6{tokens}"
+  setspawn: "{prefix} &aТочка спавна успешно установлена!"
+  spawn: "{prefix} &aВы были телепортированы на спавн!"
+  not-found-spawn: "{prefix} &cТочка спавна не найдена!"
+  feed:
+    cooldown:
+      time: 60
+      message: "{prefix} &cВы сможете использовать данную команду только через {h}ч {m}мин {s}сек!"
+    multiply-use:
+      - "&cВарианты использования:"
+      - " &c/feed"
+      - " &c/feed <игрок>"
+    player: "{prefix} &fВы &6восполнили &fсебе &6голод"
+    other: "{prefix} &fВы &6восполнили &6голод &fигроку &6{player}"
+  heal:
+    cooldown:
+      time: 60
+      message: "{prefix} &cВы сможете использовать данную команду только через {h}ч {m}мин {s}сек!"
+    multiply-use:
+      - "&cВарианты использования:"
+      - " &c/heal"
+      - " &c/heal <игрок>"
+    player: "{prefix} &fВы &6восполнили &fсебе &6здоровье"
+    other: "{prefix} &fВы &6восполнили &6здоровье &fигроку &6{player}"
+  clear:
+    multiply-use:
+      - "&cВарианты использования:"
+      - " &c/clear"
+      - " &c/clear <игрок>"
+    player: "{prefix} &fВы &6очистили &fсебе &6инвентарь"
+    other: "{prefix} &fВы &6очистили &6инвентарь &fигроку &6{player}"
+  weather: "{prefix} &fПогода в мире установлена на {weather}"
+  invsee:
+    open: "{prefix} &fВы &6открыли инвентарь &fигрока &6{player}"
+    usage: "{prefix} &cИспользуйте: /invsee <игрок>"
+  ban:
+    usage: "{prefix} &cИспользуйте: /ban <игрок> <причина>"
+    already-banned: "{prefix} &cИгрок {player} уже забанен!"
+    not-can: "{prefix} &cВы не можете забанить игрока {player}!"
+    broadcast: "{prefix} &fИгрок &e{player} &fбыл &6забанен &c{admin} &fнавсегда по причине &6{reason}"
+    layout:
+      - "&6&lLastLord"
+      - " "
+      - "&cВы были забанены навсегда!"
+      - " "
+      - "&fЗабанил: &c{admin}"
+      - "&fПричина: &6{reason}"
+      - " "
+      - "Приобрести разбан можно на &6LastLord.su"
+  tempban:
+    usage: "{prefix} &cИспользуйте: /ban <игрок> <время> <причина>"
+    time-format:
+      days: "дн"
+      hours: "ч"
+      minutes: "мин"
+      seconds: "сек"
+    broadcast: "{prefix} &fИгрок &e{player} &fбыл &6забанен &c{admin} &fна &6{format-time} по причине &6{reason}"
+    layout:
+      - "&6&lLastLord"
+      - " "
+      - "&cВы были забанены!"
+      - " "
+      - "&fДо окончания: &6{time}"
+      - " "
+      - "&fЗабанил: &c{admin}"
+      - "&fПричина: &6{reason}"
+      - " "
+      - "Приобрести разбан можно на &6LastLord.su"
+  unban:
+    usage: "{prefix} &cИспользуйте: /unban <игрок>"
+    message: "{prefix} &fВы успешно &6разбанили &fигрока &6{player}"
+    already-unbanned: "{prefix} &cИгрок {player} не находится в блокировке!"
+  mute:
+    usage: "{prefix} &cИспользуйте: /mute <игрок> <причина>"
+    already-muted: "{prefix} &cИгрок {player} уже замучен!"
+    not-can: "{prefix} &cВы не можете замутить игрока {player}!"
+    broadcast: "{prefix} &fИгрок &e{player} &fбыл &6замучен &c{admin} &fнавсегда по причине &6{reason}"
+    layout:
+      - " "
+      - " &fВы были замучены &c{admin} &fнавсегда по причине &6{reason}!"
+      - " "
+      - " &6Приобрести размут можно на &6LastLord.su"
+      - " "
+  tempmute:
+    usage: "{prefix} &cИспользуйте: /tempmute <игрок> <время> <причина>"
+    time-format:
+      days: "дн"
+      hours: "ч"
+      minutes: "мин"
+      seconds: "сек"
+    broadcast: "{prefix} &fИгрок &e{player} &fбыл &6замучен &c{admin} &fна &6{format-time} по причине &6{reason}"
+    layout:
+      - " "
+      - " &fВы были замучены &c{admin} &fпо причине &6{reason}!"
+      - " &fДо окончания: &6{time}"
+      - " "
+      - " &6Приобрести размут можно на &6LastLord.su"
+      - " "
+  unmute:
+    usage: "{prefix} &cИспользуйте: /unmute <игрок>"
+    message: "{prefix} &fВы успешно &6размутили &fигрока &6{player}"
+    already-unmuted: "{prefix} &cИгрок {player} не находится в муте!"
+  fly:
+    multiply-use:
+      - "&cВарианты использования:"
+      - " &c/fly"
+      - " &c/fly <игрок>"
+    player:
+      enable: "{prefix} &fВы &6включили &fсебе &6режим полета"
+      disable: "{prefix} &fВы &6выключили &fсебе &6режим полета"
+    other: "{prefix} &fВы {fly} &6режим полета &fигроку &6{player}"
+  msg:
+    usage: "{prefix} &cИспользуйте: /msg <игрок> <сообщение>"
+  donatechat:
+    usage: "{prefix} &cИспользуйте: /donatechat <сообщение>"
+    chat-format: "&6Донат-чат &7| {rank} {player}&7: {message}"
+  staffchat:
+    usage: "{prefix} &cИспользуйте: /staffchat <сообщение>"
+    chat-format: "&6Персонал &7| {rank} {player}&7: {message}"
+  ext:
+    cooldown:
+      time: 60
+      message: "{prefix} &cВы сможете использовать данную команду только через {h}ч {m}мин {s}сек!"
+    multiply-use:
+      - "&cВарианты использования:"
+      - " &c/ext"
+      - " &c/ext <игрок>"
+    player: "{prefix} &fВы &6потушили &fсебя"
+    other: "{prefix} &fВы &6потушили &fигрока &6{player}"
+  repair:
+    cooldown:
+      time: 60
+      message: "{prefix} &cВы сможете использовать данную команду только через {h}ч {m}мин {s}сек!"
+    player: "{prefix} &fВы &6починили предмет &fв руке"
+    no-item: "{prefix} &cУ вас нет предмета в руке!"
+  sethome:
+    usage: "{prefix} &cИспользуйте: /sethome <название>"
+    create: "{prefix} &fВы &6установили &fточку дома &6{home}"
+    already-exists: "{prefix} &cТочка дома {home} уже существует!"
+    limit: "{prefix} &cВаш лимит точек дома составляет {limit}!"
+  home:
+    usage: "{prefix} &cИспользуйте: /home <название>"
+    teleport: "{prefix} &fВы были &6телепортированы &fна точку дома &6{home}"
+    no-exists: "{prefix} &cТочка дома {home} не существует!"
+  holograms:
+    usage: "{prefix} &cИспользуйте: /holograms <create|remove|teleport> <id>"
+    create: "{prefix} &fВы &6создали &fголограмму &6{id}"
+    remove: "{prefix} &fВы &6удалили &fголограмму &6{id}"
+    teleport: "{prefix} &fВы были &6телепортированы &fк голограмме &6{id}"
+    already-exists: "{prefix} &cГолограмма {id} уже существует!"
+    no-exists: "{prefix} &cГолограмма {id} не существует!"
+  teleport:
+    multiply-use:
+      - "&cВарианты использования:"
+      - " &c/teleport <игрок>"
+      - " &c/teleport <игрок> <игрок>"
+    player: "{prefix} &fВы были &6телепортированы &fк игроку &6{player}"
+    other: "{prefix} &fИгрок &6{player} &fбыл &6телепортирован &fк игроку &6{target}"
+  vanish:
+    player:
+      enable: "{prefix} &fВы &6вошли &fв режим невидимости"
+      disable: "{prefix} &fВы &6вышли &fиз режима невидимости"
+    bossbar:
+      color: "BLUE"
+      message: "&6Вы находитесь в режиме невидимости"
+  speed:
+    usage: "{prefix} &cИспользуйте: /speed <скорость>"
+    limit: "{prefix} &cЗначение скорости должно быть от 1 до 10!"
+    player: "{prefix} &fВы &6установили &fсебе &6скорость &fна &6{speed}"
+    not-number: "{prefix} &cЗначение скорости должно быть числом!"
+  teleportask:
+    usage: "{prefix} &cИспользуйте: /tpa <игрок>"
+    yourself: "{prefix} &cВы не можете отправить запрос на телепортацию самому себе!"
+    time-out: "{prefix} &fЗапрос на &6телепортацию &fк игроку &6{player} &fистек"
+    message:
+      upper: "&fИгрок &6{player} &fотправил вам &6запрос &fна &6телепортацию&f:"
+      lower: "&fВыберите действие:"
+      buttons:
+        accept:
+          text: "&a[Принять]"
+          hover: "&aПринять запрос"
+        deny:
+          text: "&c[Отменить]"
+          hover: "&cОтменить запрос"
+    from: "{prefix} &fВы &6отправили &fзапрос на &6телепортацию &fот игрока &6{player}"
+  teleportaccept:
+    usage: "{prefix} &cИспользуйте /tpaccept <игрок>"
+    from:
+      accept: "{prefix} &fИгрок &6{player} &fпринял ваш &6запрос &fна &6телепортацию"
+    to:
+      accept: "{prefix} &fВы &6приняли &fзапрос на &6телепортацию &fот игрока &6{player}"
+    not-found: "{prefix} &cЗапрос на телепортацию не найден или уже был обработан!"
+  teleportdeny:
+    usage: "{prefix} &cИспользуйте /tpdeny <игрок>"
+    from:
+      deny: "{prefix} &fИгрок &6{player} &fотменил ваш &6запрос &fна &6телепортацию"
+    to:
+      deny: "{prefix} &fВы &6отменили &fзапрос на &6телепортацию &fот игрока &6{player}"
+    not-found: "{prefix} &cЗапрос на телепортацию не найден или уже был обработан!"

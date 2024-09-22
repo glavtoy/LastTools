@@ -1,0 +1,24 @@
+ban-words:
+  - 'https://'
+  - 'http://'
+  - '.com'
+  - '.ru'
+  - '.su'
+  - '.space'
+  - '.net'
+  - 'www.'
+  - '.fun'
+  - '.io'
+  - '.ua'
+  - '.ai'
+  - '.shop'
+  - '.site'
+  - '.pro'
+  - '.tech'
+  - '.online'
+  - '.me'
+  - '.net'
+  - 'youtube.com'
+
+interval: 5
+max-messages-for-mute: 3

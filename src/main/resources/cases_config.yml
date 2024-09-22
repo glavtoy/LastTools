@@ -1,0 +1,5 @@
+title:
+  first: "&6&lLord"
+  second: "&fВы получили"
+broadcast:
+  - "&fИгрок &6{player} &fвыбил {prize} &fиз {case}"

@@ -1,0 +1,25 @@
+title: "Аукцион : Страница {page}/{max}"
+min-price: 1
+max-price: 1000000000
+sell-item:
+  lore:
+    - " "
+    - " &fДо окончания: {d}дн {h}ч {m}мин {s}сек"
+    - " &fЦена: &a{price}"
+    - " "
+    - "&eНажмите, чтобы купить"
+previous-page-item:
+  item: SPECTRAL_ARROW
+  name: "&6Пред. страница"
+next-page-item:
+  item: SPECTRAL_ARROW
+  name: "&6След. страница"
+update-page-item:
+  item: END_CRYSTAL
+  name: "&6Обновить страницу"
+my-items-item:
+  item: CHEST
+  name: "&6Мои предметы"
+categories-item:
+  item: SOUL_CAMPFIRE
+  name: "&6Категории"

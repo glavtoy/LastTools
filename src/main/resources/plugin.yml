@@ -1,0 +1,120 @@
+name: LastTools
+version: '${project.version}'
+main: ru.lastlord.lasttools.LastTools
+api-version: '1.16'
+depend:
+  - TAB
+  - PlaceholderAPI
+  - ProtocolLib
+commands:
+  gamemode:
+    aliases:
+      - gm
+  wash:
+  rank:
+  coins:
+    aliases:
+      - coin
+  tokens:
+    aliases:
+      - token
+  balance:
+    aliases:
+      - balances
+      - bal
+  day:
+  night:
+  buyer:
+  lastbuyer:
+    aliases:
+      - lbuyer
+      - lb
+  setspawn:
+    aliases:
+      - sspawn
+  spawn:
+  feed:
+    aliases:
+      - eat
+  heal:
+  storm:
+  sun:
+  clear:
+  invsee:
+  ban:
+  unban:
+    aliases:
+      - uban
+  tempban:
+    aliases:
+      - tban
+  mute:
+  unmute:
+    aliases:
+      - umute
+  tempmute:
+    aliases:
+      - tmute
+  fly:
+  msg:
+  workbench:
+    aliases:
+      - wbench
+      - craft
+  stonecutter:
+  grindstone:
+  loom:
+  cartographytable:
+    aliases:
+      - carttable
+  anvil:
+  smithingtable:
+    aliases:
+      - smithtable
+  ext:
+    aliases:
+      - extinguish
+  donatechat:
+    aliases:
+      - dchat
+      - dc
+  staffchat:
+    aliases:
+      - schat
+      - sc
+  repair:
+  sethome:
+  home:
+  holograms:
+    aliases:
+      - hologram
+      - holo
+  teleport:
+    aliases:
+      - tp
+  vanish:
+    aliases:
+      - v
+  speed:
+  teleportask:
+    aliases:
+      - tpask
+      - tpa
+      - call
+  teleportaccept:
+    aliases:
+      - tpaccept
+  teleportdeny:
+    aliases:
+      - tpdeny
+  auction:
+    aliases:
+      - auc
+      - ah
+  crypto:
+    aliases:
+      - wallet
+  lastcrypto:
+  enderchest:
+    aliases:
+      - ec
